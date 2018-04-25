@@ -3,7 +3,8 @@
 
 # Import the pygame library and initialise the game engine
 import pygame
-
+#import menuTemplateButtonClass
+#from menuTemplateButtonClass import Button
 pygame.init()
 
 # Define some colours
@@ -21,12 +22,12 @@ SCREENHEIGHT = 600
 
 size = (SCREENWIDTH, SCREENHEIGHT)
 screen = pygame.display.set_mode(size)
-pygame.display.set_caption("My Button")
+pygame.display.set_caption("hec")
 
 # --- Text elements
 
 # Define text for title of game
-fontTitle = pygame.font.Font('freesansbold.ttf', 32)
+fontTitle = pygame.font.Font('Market_Deco.ttf', 32)
 textSurfaceTitle = fontTitle.render('My Awesome Game!', True, BLACK) 
 textRectTitle = textSurfaceTitle.get_rect()
 textRectTitle.center = (200, 150)   # place the centre of the text
@@ -71,7 +72,7 @@ while carryOn:
         pygame.draw.rect(screen, GREEN, (SCREENWIDTH/3-50, SCREENHEIGHT/2, 100, 50))
 
     # Red button
-    pygame.draw.rect(screen, RED, (SCREENWIDTH*2/3-50, SCREENHEIGHT/2, 100, 50))
+    #button01 = Button("Test", (400,500), my_shell_function)
 
     # Text
     screen.blit(textSurfaceTitle, textRectTitle)
