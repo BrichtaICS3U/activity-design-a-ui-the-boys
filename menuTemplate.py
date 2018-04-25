@@ -3,7 +3,6 @@
 
 # Import the pygame library and initialise the game engine
 import pygame
-#import menuTemplateButtonClass
 from menuTemplateButtonClass import Button
 pygame.init()
 
@@ -19,7 +18,7 @@ BLUE = (33, 150, 243)
 # Open a new window
 # The window is defined as (width, height), measured in pixels
 SCREENWIDTH = 800
-SCREENHEIGHT = 600
+SCREENHEIGHT = 700
 
 size = (SCREENWIDTH, SCREENHEIGHT)
 screen = pygame.display.set_mode(size)
@@ -73,7 +72,7 @@ while carryOn:
         pygame.draw.rect(screen, GREEN, (SCREENWIDTH/3-50, SCREENHEIGHT/2, 100, 50))
 
     # Red button
-    Button("word",200,200,100,50,[5,95,5],[0,255,0])
+   # Button("word",200,200,100,50,[5,95,5],[0,255,0])
 
     # Text
     screen.blit(textSurfaceTitle, textRectTitle)

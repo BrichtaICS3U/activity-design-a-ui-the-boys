@@ -11,8 +11,8 @@ BLACK = (0, 0, 0)
 RED = (255, 0, 0)
 BLUE = (0, 0, 255)
 
-SCREENWIDTH = 250
-SCREENHEIGHT = 500
+SCREENWIDTH = 120
+SCREENHEIGHT = 100
 size = (SCREENWIDTH, SCREENHEIGHT)
 screen = pygame.display.set_mode(size)
 
@@ -28,7 +28,7 @@ class Button():
        font_name = name of font
        font_size = size of font
     """
-    def __init__(self, txt, location, action, bg=WHITE, fg=BLACK, size=(80, 30), font_name="Market_Deco", font_size=16):
+    def __init__(self, txt, location, action, bg=WHITE, fg=BLACK, size=(80, 30), font_name="Segoe Print", font_size=16):
         self.color = bg  # the static (normal) color
         self.bg = bg  # actual background color, can change on mouseover
         self.fg = fg  # text color
@@ -101,9 +101,9 @@ clock = pygame.time.Clock()
 button_01 = Button("Next", (SCREENWIDTH/2, SCREENHEIGHT/3), my_next_function)
 button_02 = Button("Previous", (SCREENWIDTH/2, SCREENHEIGHT/3), my_previous_function)
 button_03 = Button("Quit", (SCREENWIDTH/2, SCREENHEIGHT*2/3), my_quit_function, bg=(50, 200, 20))
-button_04 = Button("Test",(SCREENWIDTH/2, SCREENHEIGHT/2),my_shell_function)
+
 #arrange button groups depending on level
-level1_buttons = [button_01, button_03, button_04]
+level1_buttons = [button_01, button_03]
 level2_buttons = [button_02, button_03]
 
 #---------Main Program Loop----------
