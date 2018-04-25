@@ -11,9 +11,10 @@ pygame.init()
 # Colours are defined using RGB values
 BLACK = (0, 0, 0)
 WHITE = (255, 255, 255)
-GREEN = (0, 200, 0)
-BRIGHT_GREEN = (0, 255, 0)
-RED = (200, 0, 0)
+GREEN = (76, 175, 80)
+BRIGHT_GREEN = (118, 255, 3)
+RED = (244, 67, 54)
+BLUE = (33, 150, 243)
 
 # Open a new window
 # The window is defined as (width, height), measured in pixels
