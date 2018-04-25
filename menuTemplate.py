@@ -4,7 +4,7 @@
 # Import the pygame library and initialise the game engine
 import pygame
 #import menuTemplateButtonClass
-#from menuTemplateButtonClass import Button
+from menuTemplateButtonClass import Button
 pygame.init()
 
 # Define some colours
@@ -72,7 +72,7 @@ while carryOn:
         pygame.draw.rect(screen, GREEN, (SCREENWIDTH/3-50, SCREENHEIGHT/2, 100, 50))
 
     # Red button
-    #button01 = Button("Test", (400,500), my_shell_function)
+    Button("word",200,200,100,50,[5,95,5],[0,255,0])
 
     # Text
     screen.blit(textSurfaceTitle, textRectTitle)
