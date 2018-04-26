@@ -10,11 +10,11 @@ GRAY = (127, 127, 127)
 BLACK = (0, 0, 0)
 RED = (255, 0, 0)
 BLUE = (0, 0, 255)
-
-SCREENWIDTH = 120
-SCREENHEIGHT = 100
+SCREENWIDTH = 800
+SCREENHEIGHT = 380
 size = (SCREENWIDTH, SCREENHEIGHT)
 screen = pygame.display.set_mode(size)
+background = pygame.image.load("city.png")
 
 class Button():
     """This is a class for a generic button.
@@ -27,8 +27,8 @@ class Button():
        size = (width, height) of button
        font_name = name of font
        font_size = size of font
-    """
-    def __init__(self, txt, location, action, bg=WHITE, fg=BLACK, size=(80, 30), font_name="Segoe Print", font_size=16):
+    """ 
+    def __init__(self, txt, location, action, bg=WHITE, fg=BLACK, size=(80, 30), font_name="7 Squared Regular", font_size=10):
         self.color = bg  # the static (normal) color
         self.bg = bg  # actual background color, can change on mouseover
         self.fg = fg  # text color
@@ -62,9 +62,9 @@ class Button():
         """Runs a function when clicked"""
         self.call_back_()
 
-def my_shell_function():
+def helloFunction():
     """A generic function that prints something in the shell"""
-    print('Fire the nukes!')
+    print('Hello in the shell')
 
 def my_next_function():
     """A function that advances to the next level"""
@@ -98,12 +98,13 @@ carryOn = True
 clock = pygame.time.Clock()
 
 #create button objects
-button_01 = Button("Next", (SCREENWIDTH/2, SCREENHEIGHT/3), my_next_function)
-button_02 = Button("Previous", (SCREENWIDTH/2, SCREENHEIGHT/3), my_previous_function)
-button_03 = Button("Quit", (SCREENWIDTH/2, SCREENHEIGHT*2/3), my_quit_function, bg=(50, 200, 20))
+button_01 = Button("HELLO", (SCREENWIDTH/2, 190), helloFunction,bg=(0,234,223))
+button_04 = Button("SETTINGS", (SCREENWIDTH/2,150),my_next_function,bg = (0,212,19))
+button_02 = Button("PREVIOUS", (SCREENWIDTH/2, 190), my_previous_function)
+button_03 = Button("Quit", (SCREENWIDTH/2, 240), my_quit_function, bg=(212,0,0))
 
 #arrange button groups depending on level
-level1_buttons = [button_01, button_03]
+level1_buttons = [button_01, button_03, button_04]
 level2_buttons = [button_02, button_03]
 
 #---------Main Program Loop----------
@@ -118,15 +119,26 @@ while carryOn:
     # --- Game logic goes here
 
     # --- Draw code goes here
-
+    
     # Clear the screen to white
     screen.fill(WHITE)
 
     # Draw buttons
     if level == 1:
+        screen.blit(background,(0,0))
+        font = pygame.font.Font(None, 36)
+        pygame.draw.rect(screen, [255,255,255], (200,40,460,40))
+        text = font.render("STEEL CLOUDS ABOVE METAL TREES", 1, (10, 10, 10))
+        screen.blit(text, (200,50))
+        
         for button in level1_buttons:
             button.draw()
     elif level == 2:
+        screen.blit(background,(0,0))
+        font = pygame.font.Font(None, 36)
+        pygame.draw.rect(screen, [255,255,255], (350,40,125,40))
+        text = font.render("SETTINGS", 1, (10, 10, 10))
+        screen.blit(text, (350,50)) 
         for button in level2_buttons:
             button.draw()
 
