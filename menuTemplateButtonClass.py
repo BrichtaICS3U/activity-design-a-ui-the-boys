@@ -80,7 +80,10 @@ def my_quit_function():
     """A function that will quit the game and close the pygame window"""
     pygame.quit()
     sys.exit()
-
+def soundON():
+    print("Sound: ON")
+def soundOFF():
+    print("Sound: OFF") 
 def mousebuttondown(level):
     """A function that checks which button was pressed"""
     pos = pygame.mouse.get_pos()
@@ -98,10 +101,10 @@ carryOn = True
 clock = pygame.time.Clock()
 
 #create button objects
-button_01 = Button("HELLO", (SCREENWIDTH/2, 190), helloFunction,bg=(0,234,223))
-button_04 = Button("SETTINGS", (SCREENWIDTH/2,150),my_next_function,bg = (0,212,19))
-button_02 = Button("PREVIOUS", (SCREENWIDTH/2, 190), my_previous_function)
-button_03 = Button("Quit", (SCREENWIDTH/2, 240), my_quit_function, bg=(212,0,0))
+button_01 = Button("HELLO", (SCREENWIDTH/2, 200), helloFunction,bg=(0,234,223))
+button_04 = Button("SETTINGS", (SCREENWIDTH/2,240),my_next_function,bg = (0,212,19))
+button_02 = Button("BACK", (SCREENWIDTH/2, 240), my_previous_function, bg = (0,212,19))
+button_03 = Button("Quit", (SCREENWIDTH/2, 280), my_quit_function, bg=(212,0,0))
 
 #arrange button groups depending on level
 level1_buttons = [button_01, button_03, button_04]
